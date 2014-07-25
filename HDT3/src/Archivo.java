@@ -23,6 +23,7 @@ grabador.println("Hola");//aqui simplemente mandamos la cadena
 //a grabar podemos usar varias veces la funcion para grabar 
 //varias lineas en el archivo 
 grabador.println("¿Como estas?"); 
+grabador.println("esta es una prueba"); 
 
 grabador.close();//es muy importante cerrar el archivo ya que 
 //sino lo haces no se guardan los cambios 
