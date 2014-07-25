@@ -1,6 +1,7 @@
 import java.io.File; 
 import java.io.PrintWriter; 
-import javax.swing.JOptionPane; 
+import java.util.Random; 
+import javax.swing.JOptionPane;
 
 /** 
 * 
@@ -18,6 +19,8 @@ try
 { 
 PrintWriter grabador = new PrintWriter(archivo);//aqui creamos 
 //el objeto que permite grabar en el archivo 
+
+Random rn = new Random();
 
 grabador.println("Hola");//aqui simplemente mandamos la cadena 
 //a grabar podemos usar varias veces la funcion para grabar 
