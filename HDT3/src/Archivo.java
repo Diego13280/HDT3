@@ -32,10 +32,4 @@ catch(Exception e)
 JOptionPane.showMessageDialog(null, e.getMessage()); 
 } 
 
-} 
-
-public static void main(String args[]) 
-{ 
-new Archivo(); 
-} 
-}
+} }
