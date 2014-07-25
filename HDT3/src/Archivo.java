@@ -21,14 +21,20 @@ PrintWriter grabador = new PrintWriter(archivo);//aqui creamos
 //el objeto que permite grabar en el archivo 
 
 Random rand = new Random();
-int x = rand.nextInt(100);
 
+int contador = 0;
 grabador.println("Hola");//aqui simplemente mandamos la cadena 
 //a grabar podemos usar varias veces la funcion para grabar 
 //varias lineas en el archivo 
 grabador.println("¿Como estas?"); 
 grabador.println("esta es u"); 
-grabador.println(x); 
+while (contador < 2000){
+
+    int x = rand.nextInt(1000);
+    grabador.println(x); 
+    contador ++;
+}
+
 
 grabador.close();//es muy importante cerrar el archivo ya que 
 //sino lo haces no se guardan los cambios 
