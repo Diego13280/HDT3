@@ -10,38 +10,42 @@ import javax.swing.JOptionPane;
 * @author Daniel Mejia		13271
 * @author Esteban Barrera	13413
 */ 
-public class Archivo { 
-private File archivo; 
 
-public Archivo() 
+public class Archivo 
 { 
-    archivo = new File("miarchivo.txt");
-    try 
+    private File archivo; 
+
+    public Archivo() 
     { 
-        PrintWriter grabador = new PrintWriter(archivo);//aqui creamos 
-        //el objeto que permite grabar en el archivo 
+        archivo = new File("miarchivo.txt");
+        try 
+        { 
+            PrintWriter grabador = new PrintWriter(archivo);//aqui creamos 
+            //el objeto que permite grabar en el archivo 
 
-        Random rand = new Random();
+            Random rand = new Random();
 
-        int contador = 0;
-        grabador.println("Hola");//aqui simplemente mandamos la cadena 
-        //a grabar podemos usar varias veces la funcion para grabar 
-        //varias lineas en el archivo 
-        grabador.println("¿Como estas?"); 
-        grabador.println("esta es u"); 
-        while (contador < 2000)
-        {
+            int contador = 0;
+            grabador.println("Hola");//aqui simplemente mandamos la cadena 
+            //a grabar podemos usar varias veces la funcion para grabar 
+            //varias lineas en el archivo 
+            grabador.println("¿Como estas?"); 
+            grabador.println("esta es u"); 
+            while (contador < 2000)
+            {
 
-            int x = rand.nextInt(1000);
-            grabador.println(x); 
-            contador ++;
+                int x = rand.nextInt(1000);
+                grabador.println(x); 
+                contador ++;
+            }
+
+
+            grabador.close();//es muy importante cerrar el archivo ya que 
+            //sino lo haces no se guardan los cambios 
         }
-
-
-        grabador.close();//es muy importante cerrar el archivo ya que 
-        //sino lo haces no se guardan los cambios 
+        catch(Exception e) 
+        { 
+            JOptionPane.showMessageDialog(null, e.getMessage()); 
+        } 
     }
-    catch(Exception e) 
-    { 
-        JOptionPane.showMessageDialog(null, e.getMessage()); 
-    } 
+}
