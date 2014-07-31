@@ -5,6 +5,10 @@ import java.util.Random;
 import javax.swing.JOptionPane;
 import java.io.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /** 
 * 
 * @author Diego Juarez		13280
@@ -15,9 +19,10 @@ import java.io.*;
 public class Archivo 
 { 
     private File archivo; 
-
+    
     public Archivo() 
     { 
+       ArrayList<String> elArreglo = new ArrayList<String>();
         archivo = new File("miarchivo.txt");
         try 
         { 
@@ -56,14 +61,14 @@ public class Archivo
             // Leer el archivo linea por linea
             while ((strLinea = buffer.readLine()) != null)   {
                 // Imprimimos la línea por pantalla
-                System.out.println (strLinea);
+                elArreglo.add(strLinea);
             }
             // Cerramos el archivo
             entrada.close();
         }catch (Exception e){ //Catch de excepciones
             System.err.println("Ocurrio un error: " + e.getMessage());
         }
-        
+        System.out.println (elArreglo);
         
         
         
