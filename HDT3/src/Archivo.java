@@ -22,8 +22,11 @@ public class Archivo
     
     public Archivo() 
     { 
-       ArrayList<String> elArreglo = new ArrayList<String>();
-       ArrayList<Integer> ArregloConvertido = new ArrayList<Integer>();
+     
+       List<String> elArreglo = new ArrayList<String>();
+       List<Integer> ArregloConvertido = new ArrayList<Integer>();
+       BubbleSort Burbuja = new BubbleSort ();
+       
        int a;
        int contadorParaConvertir;
        String letra;
@@ -82,9 +85,20 @@ public class Archivo
             ArregloConvertido.add(convertido);
             contadorParaConvertir ++;
         }
-        System.out.println (ArregloConvertido );
+      
+        int dsf[] = new int[ArregloConvertido.size()]; 
+       
+            for(int i =0;i<ArregloConvertido.size();i++){
+            dsf[i] = ArregloConvertido.get(i);
+        }   
         
+        System.out.println ("El Arreglo Desordenado es: ");
         
+      	for(int k: dsf)
+		{
+			System.out.println(k);
+		}
+        Burbuja.bubble(dsf);
         
         
         
