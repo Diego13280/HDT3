@@ -26,7 +26,7 @@ public class Archivo
        List<String> elArreglo = new ArrayList<String>();
        List<Integer> ArregloConvertido = new ArrayList<Integer>();
        BubbleSort Burbuja = new BubbleSort ();
-       
+       InsertionSort Insertion = new InsertionSort ();
        int a;
        int contadorParaConvertir;
        String letra;
@@ -99,6 +99,8 @@ public class Archivo
 			System.out.println(k);
 		}
         Burbuja.bubble(dsf);
+        Insertion.insertionSort(dsf);
+        
         
         
         
