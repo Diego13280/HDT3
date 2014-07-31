@@ -23,6 +23,11 @@ public class Archivo
     public Archivo() 
     { 
        ArrayList<String> elArreglo = new ArrayList<String>();
+       ArrayList<Integer> ArregloConvertido = new ArrayList<Integer>();
+       int a;
+       int contadorParaConvertir;
+       String letra;
+       int convertido;
         archivo = new File("miarchivo.txt");
         try 
         { 
@@ -32,7 +37,7 @@ public class Archivo
             Random rand = new Random();
 
             int contador = 0;
-            while (contador < 2000)
+            while (contador < 20)
             {
 
                 int x = rand.nextInt(1000);
@@ -68,7 +73,16 @@ public class Archivo
         }catch (Exception e){ //Catch de excepciones
             System.err.println("Ocurrio un error: " + e.getMessage());
         }
-        System.out.println (elArreglo);
+        
+        a= elArreglo.size();
+        contadorParaConvertir = 0;
+        while (contadorParaConvertir < a){
+        letra=elArreglo.get(contadorParaConvertir); 
+            convertido = Integer.parseInt(letra);
+            ArregloConvertido.add(convertido);
+            contadorParaConvertir ++;
+        }
+        System.out.println (ArregloConvertido );
         
         
         
