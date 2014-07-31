@@ -14,6 +14,8 @@ import java.util.List;
 * @author Diego Juarez		13280
 * @author Daniel Mejia		13271
 * @author Esteban Barrera	13413
+* El código para la lectura del archivo de texto fue tomado de la página: http://codigosparadesarrolladores.blogspot.com/2014/06/codigo-java-leer-archivos-de-texto.html
+* y tambien  http://codigomaldito.blogspot.com/2011/06/como-leer-un-archivo-de-texto-en-java.html
 */ 
 
 public class Archivo 
@@ -92,17 +94,21 @@ public class Archivo
             dsf[i] = ArregloConvertido.get(i);
         }   
         
+        
         System.out.println ("El Arreglo Desordenado es: ");
         
       	for(int k: dsf)
-		{
-			System.out.println(k);
-		}
-        Burbuja.bubble(dsf);
-        Insertion.insertionSort(dsf);
-        
-        
-        
-        
+        {
+            System.out.println(k);
+        }
+        Mergesort.mergeSort(dsf, a);
+        System.out.println ("El Arreglo Ordenado es: ");
+        for(int k: dsf)
+        {
+           System.out.println(k);
+        }
+        //Burbuja.bubble(dsf);
+        //Insertion.insertionSort(dsf);
+              
     }
 }
