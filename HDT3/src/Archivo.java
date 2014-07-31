@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.PrintWriter; 
 import java.util.Random; 
 import javax.swing.JOptionPane;
+import java.io.*;
 
 /** 
 * 
@@ -26,11 +27,6 @@ public class Archivo
             Random rand = new Random();
 
             int contador = 0;
-            grabador.println("Hola");//aqui simplemente mandamos la cadena 
-            //a grabar podemos usar varias veces la funcion para grabar 
-            //varias lineas en el archivo 
-            grabador.println("¿Como estas?"); 
-            grabador.println("esta es u"); 
             while (contador < 2000)
             {
 
@@ -39,7 +35,6 @@ public class Archivo
                 contador ++;
             }
 
-
             grabador.close();//es muy importante cerrar el archivo ya que 
             //sino lo haces no se guardan los cambios 
         }
@@ -47,5 +42,32 @@ public class Archivo
         { 
             JOptionPane.showMessageDialog(null, e.getMessage()); 
         } 
+        
+        
+        
+        try{
+            // Abrimos el archivo
+            FileInputStream fstream = new FileInputStream("miarchivo.txt");
+            // Creamos el objeto de entrada
+            DataInputStream entrada = new DataInputStream(fstream);
+            // Creamos el Buffer de Lectura
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(entrada));
+            String strLinea;
+            // Leer el archivo linea por linea
+            while ((strLinea = buffer.readLine()) != null)   {
+                // Imprimimos la línea por pantalla
+                System.out.println (strLinea);
+            }
+            // Cerramos el archivo
+            entrada.close();
+        }catch (Exception e){ //Catch de excepciones
+            System.err.println("Ocurrio un error: " + e.getMessage());
+        }
+        
+        
+        
+        
+        
+        
     }
 }
