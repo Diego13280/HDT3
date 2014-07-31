@@ -42,10 +42,10 @@ public class Archivo
             Random rand = new Random();
 
             int contador = 0;
-            while (contador < 20)
+            while (contador < 2000)
             {
 
-                int x = rand.nextInt(1000);
+                int x = rand.nextInt(2000);
                 grabador.println(x); 
                 contador ++;
             }
@@ -101,7 +101,8 @@ public class Archivo
         {
             System.out.println(k);
         }
-        Mergesort.mergeSort(dsf, a);
+        //Mergesort.mergeSort(dsf, a);
+        Quicksort.quickSort(dsf, a);
         System.out.println ("El Arreglo Ordenado es: ");
         for(int k: dsf)
         {
