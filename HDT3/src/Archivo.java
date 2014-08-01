@@ -101,15 +101,20 @@ public class Archivo
         {
             System.out.println(k);
         }
-        //Mergesort.mergeSort(dsf, a);
+        
+        Burbuja.bubble(dsf);
+        Mergesort.mergeSort(dsf, a);
         Quicksort.quickSort(dsf, a);
+        Insertion.insertionSort(dsf);
         System.out.println ("El Arreglo Ordenado es: ");
         for(int k: dsf)
         {
            System.out.println(k);
         }
-        //Burbuja.bubble(dsf);
-        //Insertion.insertionSort(dsf);
+        Burbuja.bubble(dsf);
+        Mergesort.mergeSort(dsf, a);
+        Quicksort.quickSort(dsf, a);
+        Insertion.insertionSort(dsf);
               
     }
 }
